@@ -1,0 +1,81 @@
+    public static String check(String fileName) throws FileNotFoundException {
+        File f = new File(fileName);
+        LinkedListString stack = new LinkedList();
+        if (!f.exists()) {
+            throw new FileNotFoundException(fileName);
+        }
+        Scanner sc = new Scanner(f);
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            StringTokenizer stk = new StringTokenizer(line, {}[](), true);
+            
+            while (stk.hasMoreTokens()) {
+                String token = stk.nextToken();
+                if (isBalanceSymbol(token)) {
+                    if (isOpeningSymbol(token)) {
+                        System.out.println(push(+token+)to Stack);
+                        stack.push(token);
+                    }else{
+                        if(stack.peek()==null){
+                            return Missing opening symbol;
+                        }
+                        if(getSymbolValue(token)!=getSymbolValue(stack.peek())){
+                            return Unbalanced;
+                        }
+                        stack.pop();
+                        System.out.println(pop() ans check);
+                    }
+                }
+            }
+        }
+        if(stack.size()==0){
+            return Balanced;
+        }else{
+            return Missing closing symbol;
+        }
+        
+    }
+    private static int getSymbolValue(String symbol) {
+        switch (symbol) {
+            case {
+            case }return 1;
+            case [
+            case ]return 2;
+            case (
+            case )return 3;
+            case 
+            case 
+                return 4;
+        }
+        return 0;
+    }
+    
+    private static boolean isOpeningSymbol(String symbol) {
+        switch (symbol) {
+            case {
+            case [
+            case (
+            case 
+                return true;
+        }
+        return false;
+    }
+
+    private static boolean isBalanceSymbol(String symbol) {
+        switch (symbol) {
+            case {
+            case }
+            case [
+            case ]
+            case (
+            case )
+            case 
+            case 
+                return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        System.out.println(check(StackQueue.java));
+    }
